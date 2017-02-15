@@ -34,11 +34,4 @@ namespace Console.ExitCode
             System.Console.ReadKey();
         }
     }
-
-    internal class QueueWorkerConfig
-    {
-        public string IP { get; set; }
-
-        public int MaxJobsToRun { get; set; }
-    }
 }
