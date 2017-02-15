@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace Console.ExitCode
 {
@@ -7,6 +8,15 @@ namespace Console.ExitCode
         static void Main(string[] args)
         {
             System.Console.WriteLine("Entered");
+
+            System.Console.WriteLine("Paramas:");
+
+            foreach (var item in args)
+            {
+                System.Console.WriteLine("------------------------------");
+                System.Console.WriteLine(item);
+                System.Console.WriteLine("------------------------------");
+            }
 
             int value = int.Parse(args[0]);
 
@@ -21,6 +31,14 @@ namespace Console.ExitCode
             }
 
             System.Console.WriteLine("Leave");
+            System.Console.ReadKey();
         }
+    }
+
+    internal class QueueWorkerConfig
+    {
+        public string IP { get; set; }
+
+        public int MaxJobsToRun { get; set; }
     }
 }

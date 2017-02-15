@@ -1,4 +1,4 @@
-﻿$testProcess = Start-Process -FilePath 'Console.ExitCode.exe' -ArgumentList '1'  -PassThru 
+﻿$testProcess = Start-Process   -FilePath 'Console.ExitCode.exe ' -ArgumentList '0',"`"[{IP:'localhost', MaxJobsToRun: 2}]`"", 'C=A'  -PassThru 
 Wait-Process -Id $testProcess.Id -Timeout 120
 if ( $testProcess.ExitCode -eq 0){
 	Write-Output "Success"
